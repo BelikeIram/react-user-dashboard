@@ -21,7 +21,7 @@ API
 https://reqres.in/
 
 Hosting
-1. Netlify (https://66c06e6fc2489854e4946da2--comfy-yeot-ed6cbc.netlify.app/)
+1. Vercel (https://react-user-dashboard-zn9c.vercel.app/)
 
    
 NOTE: THIS PROJECT USES VITE TO CREATE REACT APP , TO CREATE REACT APP USING VITE TYPE "npm create vite@latest"
