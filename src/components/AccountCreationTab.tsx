@@ -41,7 +41,6 @@ const AccountCreationTab: React.FC = () => {
   
       // Navigate to a different route after successful form submission
       navigate('/dashboard/userDetails');
-      window.location.reload()
     } catch(error) {
       // Handle error if registration fails
       alert('Registration failed. Please try again.');
