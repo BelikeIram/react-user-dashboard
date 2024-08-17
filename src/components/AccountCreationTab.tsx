@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import ClipLoader from "react-spinners/ClipLoader";
 import { RootState, AppDispatch } from '../redux/Store'; // Adjust the path if needed
 import { userRegisteration } from '../redux/UserDetailsSlice'; 
+import { authRevocation } from '../redux/UserDetailsSlice'; 
 
 
 const AccountCreationTab: React.FC = () => {
@@ -40,6 +41,7 @@ const AccountCreationTab: React.FC = () => {
       setPassword('');
   
       // Navigate to a different route after successful form submission
+      dispatch(authRevocation())
       navigate('/dashboard/userDetails');
     } catch(error) {
       // Handle error if registration fails

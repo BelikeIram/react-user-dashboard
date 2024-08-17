@@ -87,11 +87,8 @@ const userDetailsSlice = createSlice({
         state.userAuth.status = 'loading';
       })
       .addCase(userRegisteration.fulfilled, (state, action) => {
-        console.log('m in', action.payload.data);
-        
         state.userAuth.status = 'succeeded';
         state.userAuth.token = action.payload.data; // Assuming the response contains a token        
-        state.userAuth.isAuth = !state.userAuth.isAuth 
       })
       .addCase(userRegisteration.rejected, (state, action) => {
         state.userAuth.status = 'failed';
