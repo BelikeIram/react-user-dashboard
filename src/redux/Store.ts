@@ -1,6 +1,6 @@
 // store.ts
 import { configureStore } from '@reduxjs/toolkit';
-import userDetailsReducer from './userDetailsSlice'; // Adjust the path if needed
+import userDetailsReducer from './UserDetailsSlice'; // Adjust the path if needed
 
 export const store = configureStore({
   reducer: {
