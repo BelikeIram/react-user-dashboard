@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ClipLoader from "react-spinners/ClipLoader";
 import { RootState, AppDispatch } from '../redux/Store'; // Adjust the path if needed
-import { userRegisteration } from '../redux/userDetailsSlice'; 
+import { userRegisteration } from '../redux/UserDetailsSlice'; 
 
 
 const AccountCreationTab: React.FC = () => {
