@@ -1,13 +1,11 @@
 // UserDetailPage.tsx
 import React, { useState, useEffect } from 'react';
-import usersdata from '../data/usersdata.json';
-import { BiSearch } from 'react-icons/bi';
 
 import  WithAuthProtection from './WithAuthProtecttion'
 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../redux/Store'; // Adjust the path if needed
-import { fetchUserDetails } from '../redux/userDetailsSlice'; 
+import { fetchUserDetails } from '../redux/UserDetailsSlice'; 
 import ClipLoader from "react-spinners/ClipLoader";
 
 interface User {
