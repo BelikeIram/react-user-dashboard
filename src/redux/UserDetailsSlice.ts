@@ -13,6 +13,7 @@ interface UserAuthState {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   token: object;
   error: string | null;
+  isAuth:boolean;
 }
 
 interface UserDetailsState {
@@ -36,6 +37,7 @@ const initialState: UserDetailsState = {
     status: 'idle',
     token: {},
     error: null,
+    isAuth:false
   }
 };
 
@@ -63,7 +65,11 @@ export const userRegisteration = createAsyncThunk(
 const userDetailsSlice = createSlice({
   name: 'userDetailsSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    authRevocation : (state,action)=>{
+      state.userAuth.isAuth = !state.userAuth.isAuth
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserDetails.pending, (state) => {
@@ -85,6 +91,7 @@ const userDetailsSlice = createSlice({
         
         state.userAuth.status = 'succeeded';
         state.userAuth.token = action.payload.data; // Assuming the response contains a token        
+        state.userAuth.isAuth = !state.userAuth.isAuth 
       })
       .addCase(userRegisteration.rejected, (state, action) => {
         state.userAuth.status = 'failed';
@@ -92,5 +99,6 @@ const userDetailsSlice = createSlice({
       });
   },
 });
+export const {authRevocation} = userDetailsSlice.actions;
 
 export default userDetailsSlice.reducer;
